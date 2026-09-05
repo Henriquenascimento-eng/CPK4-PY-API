@@ -4,6 +4,10 @@ import sqlite3  # importa o módulo do Python que sabe conversar com bancos SQLi
 def get_connection():
     # abre (ou cria, se não existir) o arquivo dados.db
     conexao = sqlite3.connect("dados.db")
+    # ativa a validação de chaves estrangeiras (FOREIGN KEY) nesta conexão.
+    # o SQLite vem com essa validação DESLIGADA por padrão, então sem essa
+    # linha ele aceitaria produtos com usuario_id de usuários que não existem
+    conexao.execute("PRAGMA foreign_keys = ON")
     # devolve essa conexão pra quem chamou a função poder usá-la
     return conexao
 
@@ -30,7 +34,9 @@ def criar_tabelas():
             id INTEGER PRIMARY KEY AUTOINCREMENT,
             nome TEXT NOT NULL,
             preco REAL NOT NULL,
-            quantidade INTEGER
+            quantidade INTEGER,
+            usuario_id INTEGER NOT NULL,
+            FOREIGN KEY (usuario_id) REFERENCES usuarios (id)
         )
     """)
 

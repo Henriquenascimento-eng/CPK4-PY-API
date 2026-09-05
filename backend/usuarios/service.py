@@ -1,4 +1,4 @@
-import database  # importa nosso database.py para usar a get_connection()
+import database as database  # importa nosso database.py para usar a get_connection()
 
 
 def criar_usuario(usuario: dict):
