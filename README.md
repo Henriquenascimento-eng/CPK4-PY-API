@@ -20,23 +20,41 @@ O backend segue uma arquitetura em camadas:
 - **Models**: define os modelos Pydantic usados para validar os dados de entrada
 
 CP4-PY/
+
 ├── backend/
-│ ├── main.py # ponto de entrada da API
-│ ├── database.py # conexão e criação das tabelas no SQLite
-│ ├── usuarios/
-│ │ ├── controller.py
-│ │ ├── service.py
-│ │ └── models.py
-│ └── produtos/
-│ ├── controller.py
-│ ├── service.py
-│ └── models.py
+
+   │ ├── main.py # ponto de entrada da API
+
+   │ ├── database.py # conexão e criação das tabelas no SQLite
+
+   │ ├── usuarios/
+
+      │ │ ├── controller.py
+
+      │ │ ├── service.py
+
+      │ │ └── models.py
+
+   │ └── produtos/
+
+      │ ├── controller.py
+
+      │ ├── service.py
+
+      │ └── models.py
+
+
 └── frontend/
-├── index.html
-├── css/
-│ └── style.css
-└── js/
-└── script.js
+
+   ├── index.html
+
+   ├── css/
+
+      └── style.css
+
+   └── js/
+
+      └── script.js
 
 
 ## 🚀 Como rodar o projeto
