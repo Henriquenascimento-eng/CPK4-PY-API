@@ -2,61 +2,65 @@
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
-    <title>CP4 - Usuários e Produtos</title>
+    <title>StrideStore - Tênis e Calçados</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
-    <h1>CP4 - Usuários e Produtos</h1>
+    <!-- Cabeçalho da "loja" -->
+    <header class="hero">
+        <h1> StrideStore</h1>
+        <p>Os melhores tênis, direto pra sua coleção</p>
+    </header>
 
-    <!-- Bloco 1: cadastro de usuário -->
-    <section>
-        <h2>Cadastrar Usuário</h2>
-        <form id="form-usuario">
-            <label>Nome:
-                <input type="text" id="usuario-nome" required>
-            </label>
-            <label>Email:
-                <input type="email" id="usuario-email" required>
-            </label>
-            <label>Idade:
-                <input type="number" id="usuario-idade">
-            </label>
-            <button type="submit">Cadastrar Usuário</button>
-        </form>
-    </section>
+    <main>
+        <!-- Vitrine de produtos -->
+        <section class="vitrine">
+            <h2>Nossos Tênis</h2>
+            <div class="grid-produtos" id="lista-produtos"></div>
+        </section>
 
-    <!-- Bloco 2: lista de usuários -->
-    <section>
-        <h2>Usuários Cadastrados</h2>
-        <ul id="lista-usuarios"></ul>
-    </section>
+        <!-- Painel de gerenciamento (cadastros) -->
+        <section class="painel-admin">
+            <h2>Gerenciar</h2>
 
-    <!-- Bloco 3: cadastro de produto -->
-    <section>
-        <h2>Cadastrar Produto</h2>
-        <form id="form-produto">
-            <label>Nome:
-                <input type="text" id="produto-nome" required>
-            </label>
-            <label>Preço:
-                <input type="number" step="0.01" id="produto-preco" required>
-            </label>
-            <label>Quantidade:
-                <input type="number" id="produto-quantidade">
-            </label>
-            <label>Usuário dono:
-                <select id="produto-usuario" required></select>
-            </label>
-            <button type="submit">Cadastrar Produto</button>
-        </form>
-    </section>
+            <div class="formularios">
+                <form id="form-usuario" class="form-card">
+                    <h3>Cadastrar Cliente</h3>
+                    <label>Nome:
+                        <input type="text" id="usuario-nome" required>
+                    </label>
+                    <label>Email:
+                        <input type="email" id="usuario-email" required>
+                    </label>
+                    <label>Idade:
+                        <input type="number" id="usuario-idade">
+                    </label>
+                    <button type="submit">Cadastrar Cliente</button>
+                </form>
 
-    <!-- Bloco 4: lista de produtos -->
-    <section>
-        <h2>Produtos Cadastrados</h2>
-        <ul id="lista-produtos"></ul>
-    </section>
+                <form id="form-produto" class="form-card">
+                    <h3>Cadastrar Tênis</h3>
+                    <label>Modelo:
+                        <input type="text" id="produto-nome" required>
+                    </label>
+                    <label>Preço:
+                        <input type="number" step="0.01" id="produto-preco" required>
+                    </label>
+                    <label>Estoque:
+                        <input type="number" id="produto-quantidade">
+                    </label>
+                    <label>Cliente dono:
+                        <select id="produto-usuario" required></select>
+                    </label>
+                    <button type="submit">Cadastrar Tênis</button>
+                </form>
+            </div>
+
+            <h3>Clientes cadastrados</h3>
+            <ul id="lista-usuarios" class="lista-simples"></ul>
+        </section>
+    </main>
 
     <script src="js/script.js"></script>
 </body>
